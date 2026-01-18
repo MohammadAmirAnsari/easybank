@@ -1,0 +1,18 @@
+@use 'variables';
+
+.header {
+
+    &__hamburger {
+
+        >span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: variables.$blue-950;
+
+            &:not(:last-child) {
+                margin-bottom: 2px;
+            }
+        }
+    }
+}
