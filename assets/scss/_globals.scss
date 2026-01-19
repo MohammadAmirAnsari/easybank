@@ -1,3 +1,5 @@
+@use 'variables' as v;
+
 html {
     box-sizing: border-box;
 }
@@ -19,22 +21,26 @@ body {
 .flex {
     display: flex;
 
-    &-justify{
-        &-between{
+    &-justify {
+        &-between {
             justify-content: space-between;
         }
-        &-around{
+
+        &-around {
             justify-content: space-around;
         }
-        &-center{
+
+        &-center {
             justify-content: center;
         }
-        &-evenly{
+
+        &-evenly {
             justify-content: space-evenly;
         }
     }
-    &-align{
-        &-center{
+
+    &-align {
+        &-center {
             align-items: center;
         }
     }
@@ -42,4 +48,24 @@ body {
 
 .block {
     display: block;
+}
+
+// making margin and padding
+
+@each $name,$alias in v.$spacing_names {
+
+    @each $item in v.$spacing_list {
+        .#{$alias} {
+            #{$name}: #{$item};
+
+            &b-#{$item} {
+                #{$name}-bottom: #{$item};
+            }
+
+            &t-#{$item} {
+                #{$name}-top: #{$item};
+            }
+        }
+    }
+
 }
