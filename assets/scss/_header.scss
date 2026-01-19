@@ -1,6 +1,16 @@
-@use 'variables';
+@use 'variables' as v;
 
 .header {
+
+    background-color: v.$gray-50;
+    position:static;
+
+    &__nav {
+        button {
+            background-color: transparent;
+            border: none;
+        }
+    }
 
     &__hamburger {
 
@@ -8,10 +18,10 @@
             display: block;
             width: 26px;
             height: 2px;
-            background-color: variables.$blue-950;
+            background-color: v.$gray-600;
 
             &:not(:last-child) {
-                margin-bottom: 2px;
+                margin-bottom: 3px;
             }
         }
     }

@@ -4,6 +4,9 @@ https://www.figma.com/design/PCjMfBKdwfLAhNezm88OwK/Easy_Banking?node-id=0-1&p=f
 # youtube playlist
 https://www.youtube.com/watch?v=8w_kHIAkucA&list=PLUWqFDiirlsuYscECzks6zIZWr_Cfcx9k
 
+# sass command
+sass --watch assets/scss/styles.scss assets/css/styles.css
+
 # normalize css
 https://necolas.github.io/normalize.css/
 

@@ -9,3 +9,5 @@ $white: hsl(0, 100%, 100%);
 
 $spacing_list : (1, 2, 3, 4, 6, 8, 10, 12, 16, 20, 24, 28, 30, 32);
 $spacing_names : ('margin':'m','padding':'p');
+
+$breakpoint_map : ('sm':40rem,'md':48rem,'lg':64rem,'xl':80rem,'2xl':96rem)

@@ -1,4 +1,7 @@
 @use 'variables' as v;
+@use 'mixins' as m;
+@use 'functions' as f;
+
 
 html {
     box-sizing: border-box;
@@ -51,21 +54,45 @@ body {
 }
 
 // making margin and padding
-
-@each $name,$alias in v.$spacing_names {
+@each $name, $alias in v.$spacing_names {
 
     @each $item in v.$spacing_list {
         .#{$alias} {
-            #{$name}: #{$item};
+
+            &-#{$item} {
+
+                #{$name}: #{$item}px;
+            }
 
             &b-#{$item} {
-                #{$name}-bottom: #{$item};
+                #{$name}-bottom: #{$item}px;
             }
 
             &t-#{$item} {
-                #{$name}-top: #{$item};
+                #{$name}-top: #{$item}px;
             }
         }
     }
 
+}
+
+@each $breakpoint, $size in v.$breakpoint_map {
+
+    .bp-up-#{$breakpoint} {
+        @include m.breakpoint-up($size) {
+            display: block;
+        }
+    }
+
+    .bp-down-#{$breakpoint} {
+        @include m.breakpoint-down($size) {
+            display: block;
+        }
+    }
+
+    .bp-only-#{$breakpoint} {
+        @include m.breakpoint-only($size) {
+            display: block;
+        }
+    }
 }
