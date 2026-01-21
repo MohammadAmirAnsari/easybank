@@ -1,6 +1,7 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 @use 'functions' as f;
+@use 'sass:map' as map;
 
 
 html {
@@ -53,46 +54,62 @@ body {
     display: block;
 }
 
-// making margin and padding
-@each $name, $alias in v.$spacing_names {
+.m {
+    &-1 {
+        margin: f.generate_margin_rem(1);
+    }
 
-    @each $item in v.$spacing_list {
-        .#{$alias} {
-
-            &-#{$item} {
-
-                #{$name}: #{$item}px;
-            }
-
-            &b-#{$item} {
-                #{$name}-bottom: #{$item}px;
-            }
-
-            &t-#{$item} {
-                #{$name}-top: #{$item}px;
-            }
+    &t {
+        &-1 {
+            margin-top: f.generate_margin_rem(1);
         }
     }
 
+    &b {
+        &-1 {
+            margin-bottom: f.generate_margin_rem(1);
+        }
+    }
+    &e {
+        &-1 {
+            margin-inline-end: f.generate_margin_rem(1);
+        }
+        &-2 {
+            margin-inline-end: f.generate_margin_rem(2);
+        }
+        &-3 {
+            margin-inline-end: f.generate_margin_rem(3);
+        }
+        &-4 {
+            margin-inline-end: f.generate_margin_rem(4);
+        }
+        &-5 {
+            margin-inline-end: f.generate_margin_rem(5);
+        }
+    }
+}
+
+.p {
+    padding: f.generate_padding_rem(1);
 }
 
 @each $breakpoint, $size in v.$breakpoint_map {
 
-    .bp-up-#{$breakpoint} {
-        @include m.breakpoint-up($size) {
-            display: block;
+    .hide-up-from-#{$breakpoint} {
+    @include m.breakpoint-up($size) {
+            display: none;
         }
     }
 
-    .bp-down-#{$breakpoint} {
+    .hide-down-from-#{$breakpoint} {
         @include m.breakpoint-down($size) {
-            display: block;
+            display: none;
         }
     }
 
-    .bp-only-#{$breakpoint} {
+    .hide-only-for-#{$breakpoint} {
         @include m.breakpoint-only($size) {
-            display: block;
+            display: none;
         }
     }
 }

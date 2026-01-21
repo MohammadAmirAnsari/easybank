@@ -1,3 +1,5 @@
+@use 'sass:map' as map;
+
 // colors
 $blue-950: hsl(233, 26%, 24%);
 $green-500: hsl(136, 64%, 51%);
@@ -7,7 +9,8 @@ $gray-100: hsl(220, 16%, 96%);
 $gray-50: hsl(0, 0%, 98%);
 $white: hsl(0, 100%, 100%);
 
-$spacing_list : (1, 2, 3, 4, 6, 8, 10, 12, 16, 20, 24, 28, 30, 32);
-$spacing_names : ('margin':'m','padding':'p');
+// base size in rem
+$base_size_rem : 0.25rem;
 
-$breakpoint_map : ('sm':40rem,'md':48rem,'lg':64rem,'xl':80rem,'2xl':96rem)
+// breakpoints for responsive website
+$breakpoint_map : ('sm':40rem, 'md':48rem, 'lg':64rem, 'xl':80rem, '2xl':96rem)

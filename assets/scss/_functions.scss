@@ -1,24 +1,12 @@
-@use 'sass:list';
+@use 'variables' as v;
+@use 'sass:list' as list;
 
-@function get-next-index($list :(), $current_item: "") {
-@debug $current_item;
-    @if list.length($list)==0 {
-        @error "List length cannot be 0";
-        @return null;
-    }
+// return margin in rem
+@function generate_margin_rem($size) {
+    @return v.$base_size_rem * $size;
+}
 
-    @if list.length($list)==1 {
-        @warn "List length cannot be 1";
-        @return null;
-    }
-
-    $index : list.index($list, $current_item);
-
-    @if $index and list.index($list, $index) < list.length($list) {
-        @return list.nth($list, $index+1);
-    }
-
-    @else {
-        @return null;
-    }
+// return padding in rem
+@function generate_padding_rem($size) {
+    @return v.$base_size_rem * $size;
 }

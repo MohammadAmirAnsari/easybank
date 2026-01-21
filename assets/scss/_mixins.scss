@@ -1,8 +1,9 @@
 @use 'functions' as f;
 @use 'variables' as v;
-@use 'sass:map';
-@use 'sass:list';
+@use 'sass:map' as map;
+@use 'sass:list' as list;
 
+// give breakpoint from size and up
 @mixin breakpoint-up($size) {
 
     @media (min-width: #{$size}) {
@@ -11,6 +12,7 @@
 
 }
 
+// give breakpoint till size and down
 @mixin breakpoint-down($size) {
 
     @media (max-width : #{$size}) {
@@ -27,6 +29,7 @@
 
 // }
 
+// give breakpoint between size and next size
 @mixin breakpoint-only($size) {
     $sizes : map.values(v.$breakpoint_map);
     $index : list.index($sizes, $size);
