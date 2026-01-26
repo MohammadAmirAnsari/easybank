@@ -1,24 +1,32 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 @use 'globals' as g;
+@use 'functions' as f;
 
 .header {
 
     background-color: v.$gray-50;
+    background-color: pink;
     position: static;
 
     &__nav {
         button {
-            background-image: linear-gradient('bottom',v.$green-500,v.$blue-950);
+            background-image: linear-gradient(20deg, v.$cyan-400, v.$green-500);
+            border-radius: 50px;
             border: none;
+            background-color: transparent;
+            color: v.$gray-100;
+            font-style: v.$base_font v.$backup_font;
+            font-size: v.$font-weight-small;
+            font-weight: bold;
         }
 
         ul {
             li {
                 list-style-type: none;
                 color: v.$gray-600;
-                font-size:x-small;
-                margin-inline-end: calc(v.$base_size_rem * 5);
+                font-size: v.$font-weight-small;
+                margin-inline-end: f.multiply_rem_size_by(1.25);
             }
         }
     }

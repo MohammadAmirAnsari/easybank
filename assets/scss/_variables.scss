@@ -1,4 +1,5 @@
 @use 'sass:map' as map;
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100..900&display=swap');
 
 // colors
 $blue-950: hsl(233, 26%, 24%);
@@ -11,6 +12,16 @@ $white: hsl(0, 100%, 100%);
 
 // base size in rem
 $base_size_rem : 0.25rem;
+$minute_space_difference : 0.02px;
 
 // breakpoints for responsive website
-$breakpoint_map : ('sm':40rem, 'md':48rem, 'lg':64rem, 'xl':80rem, '2xl':96rem)
+$breakpoint_map : ('sm':480px, 'md':768px, 'lg':1024px, 'xl':1280px, '2xl':1536px);
+
+
+// font
+$base_font: "Public Sans";
+$backup_font: "sans-serif";
+
+$font-weight-small: 300; 
+$font-weight-normal: 400; 
+$font-weight-large: 700;

@@ -10,3 +10,7 @@
 @function generate_padding_rem($size) {
     @return v.$base_size_rem * $size;
 }
+
+@function multiply_rem_size_by($size) {
+    @return 1rem * $size;
+}

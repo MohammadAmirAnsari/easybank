@@ -8,6 +8,10 @@ html {
     box-sizing: border-box;
 }
 
+.container-fluid {
+    width: 100%;
+}
+
 *,
 *::before,
 *::after {
@@ -70,19 +74,24 @@ body {
             margin-bottom: f.generate_margin_rem(1);
         }
     }
+
     &e {
         &-1 {
             margin-inline-end: f.generate_margin_rem(1);
         }
+
         &-2 {
             margin-inline-end: f.generate_margin_rem(2);
         }
+
         &-3 {
             margin-inline-end: f.generate_margin_rem(3);
         }
+
         &-4 {
             margin-inline-end: f.generate_margin_rem(4);
         }
+
         &-5 {
             margin-inline-end: f.generate_margin_rem(5);
         }
@@ -90,13 +99,60 @@ body {
 }
 
 .p {
-    padding: f.generate_padding_rem(1);
+    &-6 {
+        padding: f.generate_padding_rem(6);
+    }
+
+    &t {
+        &-4 {
+            padding-top: f.generate_padding_rem(4);
+        }
+    }
+
+    &b {
+        &-1 {
+            padding-bottom: f.generate_padding_rem(1);
+        }
+
+        &-4 {
+            padding-bottom: f.generate_padding_rem(4);
+        }
+
+        &-6 {
+            padding-bottom: f.generate_padding_rem(6);
+        }
+    }
+
+    &s {
+        &-6 {
+            padding-inline-start: f.generate_padding_rem(6);
+        }
+
+        &-8 {
+            padding-inline-start: f.generate_padding_rem(8);
+        }
+
+        &-41 {
+            padding-inline-start: f.generate_padding_rem(41);
+        }
+    }
+
+    &e {
+
+        &-6 {
+            padding-inline-end: f.generate_padding_rem(6);
+        }
+
+        &-8 {
+            padding-inline-end: f.generate_padding_rem(8);
+        }
+    }
 }
 
 @each $breakpoint, $size in v.$breakpoint_map {
 
     .hide-up-from-#{$breakpoint} {
-    @include m.breakpoint-up($size) {
+        @include m.breakpoint-up($size) {
             display: none;
         }
     }
@@ -112,4 +168,13 @@ body {
             display: none;
         }
     }
+
+    .container {
+        @include m.make-container($breakpoint, $size) {
+            width: 100%;
+            max-width: calc($size - 2rem);
+            margin-inline: auto;
+        }
+    }
+
 }

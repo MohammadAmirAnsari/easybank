@@ -45,3 +45,6 @@ Thumbs.db
 
 # map
 *.map
+
+# bootstrap
+bootstrap*

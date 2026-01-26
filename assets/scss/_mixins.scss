@@ -7,7 +7,7 @@
 @mixin breakpoint-up($size) {
 
     @media (min-width: #{$size}) {
-        @content
+        @content;
     }
 
 }
@@ -15,15 +15,16 @@
 // give breakpoint till size and down
 @mixin breakpoint-down($size) {
 
-    @media (max-width : #{$size}) {
-        @content
+    @media (max-width : ($size - v.$minute_space_difference)) {
+        @content;
     }
 
 }
 
+
 // this is not needed currently
 // @mixin breakpoint-between($min_breakpoint, $max_breakpoint) {
-//     @media (min-width : #{$min_breakpoint}) and (max-width: #{$max_breakpoint}) {
+//     @media (min-width : #{$min_breakpoint}) and (max-width: ($max_breakpoint)) {
 //         @content
 //     }
 
@@ -37,9 +38,15 @@
     @if $index < list.length($sizes) {
         $next_size : list.nth($sizes, $index+1);
 
-        @media (min-width : #{$size}) and (max_width: #{$next_size}) {
-            @content
+        @media (min-width : #{$size}) and (max_width: ($next_size - v.$minute_space_difference)) {
+            @content;
         }
     }
 
+}
+
+@mixin make-container($breakpoint, $size) {
+    @media (min-width : $size) {
+        @content;
+    }
 }
