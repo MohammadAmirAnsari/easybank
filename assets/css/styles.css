@@ -14,10 +14,12 @@ html {
 }
 
 body {
+  background-color: hsl(233, 26%, 24%);
   margin: 0;
   padding: 0;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", "sans-serif";
   line-height: 1.3;
+  font-size: clamp(1rem, 0.868rem + 0.658vw, 1.5rem);
 }
 
 .flex {
@@ -225,7 +227,7 @@ body {
 
 .header {
   background-color: hsl(0, 0%, 98%);
-  background-color: pink;
+  background-color: hsl(0, 0%, 98%);
   position: static;
 }
 .header__nav button {
@@ -234,15 +236,41 @@ body {
   border: none;
   background-color: transparent;
   color: hsl(220, 16%, 96%);
-  font-style: "Public Sans" "sans-serif";
-  font-size: 300;
-  font-weight: bold;
+  font-weight: 400;
+  transition: opacity 300ms ease-in-out;
+}
+.header__nav button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.header__nav a {
+  line-height: 0;
+}
+.header__nav ul {
+  padding: 0;
 }
 .header__nav ul li {
   list-style-type: none;
   color: hsl(233, 8%, 62%);
-  font-size: 300;
-  margin-inline-end: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.header__nav ul li:not(:last-child) {
+  margin-inline-end: 2rem;
+}
+.header__nav ul li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: hsl(233, 8%, 62%);
+  text-decoration-color: white;
+  transition: all 300ms ease-in-out;
+}
+.header__nav ul li a:hover {
+  color: hsl(233, 26%, 24%);
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-decoration-color: hsl(136, 64%, 51%);
+  text-underline-offset: 40px;
 }
 .header__hamburger > span {
   display: block;

@@ -42,3 +42,6 @@ Key Rules:
     Semantic Names: Describe what the component is (e.g., menu), not what it looks like (red).
     Double Hyphens/Underscores: These indicate the relationship clearly and allow for multi-word names (e.g., .block__sub-element--modifier).
     Avoid Tags/IDs: Stick to class names for lower specificity
+
+# Typescale
+https://clampgenerator.com/tools/font-size-typescale/?utm_source=clampcalculator&utm_medium=headerMenu&utm_campaign=tool_migration
