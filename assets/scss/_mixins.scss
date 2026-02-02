@@ -38,15 +38,30 @@
     @if $index < list.length($sizes) {
         $next_size : list.nth($sizes, $index+1);
 
-        @media (min-width : #{$size}) and (max_width: ($next_size - v.$minute_space_difference)) {
+        @media (min-width : #{$size}) and (max-width: ($next_size - v.$minute_space_difference)) {
             @content;
         }
     }
 
 }
 
-@mixin make-container($breakpoint, $size) {
-    @media (min-width : $size) {
+// apply style from device till up
+@mixin device-up($device) {
+    @media (min-width:map.get(v.$breakpoint_map, $device)) {
+        @content;
+    }
+}
+
+// apply style from device till down
+@mixin device-below($device) {
+    @media (max-width:calc(map.get(v.$breakpoint_map, $device) - v.$minute_space_difference)) {
+        @content;
+    }
+}
+
+// apply style between devices
+@mixin device-between($start_device, $end_device) {
+    @media (min-width:map.get(v.$breakpoint_map, $device)) and (max-width:calc(map.get(v.$breakpoint_map, $device) - v.$minute_space_difference)) {
         @content;
     }
 }

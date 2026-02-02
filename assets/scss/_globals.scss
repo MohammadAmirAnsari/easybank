@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    background-color: v.$blue-950;
+    background-color: v.$gray-50;
     margin: 0;
     padding: 0;
     font-family: v.$base_font, v.$backup_font;
@@ -152,31 +152,11 @@ body {
 }
 
 @each $breakpoint, $size in v.$breakpoint_map {
-
-    .hide-up-from-#{$breakpoint} {
-        @include m.breakpoint-up($size) {
-            display: none;
-        }
-    }
-
-    .hide-down-from-#{$breakpoint} {
-        @include m.breakpoint-down($size) {
-            display: none;
-        }
-    }
-
-    .hide-only-for-#{$breakpoint} {
-        @include m.breakpoint-only($size) {
-            display: none;
-        }
-    }
-
     .container {
-        @include m.make-container($breakpoint, $size) {
+        @include m.device-up($breakpoint){
             width: 100%;
             max-width: calc($size - 2rem);
             margin-inline: auto;
         }
     }
-
 }
