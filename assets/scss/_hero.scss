@@ -1,0 +1,54 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'functions' as f;
+
+.hero {
+    background-image: url("./../images/bg-intro-mobile.svg");
+    background-position: top;
+    transform: translateY(-10%);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    .hero__img {
+        width: 100%;
+        max-width: 768px;
+        transform: translateY(-10%);
+    }
+
+    &__content {
+        text-align: center;
+        padding-block-end: f.generate_padding_rem(8);
+
+        > * {
+            margin-bottom: f.generate_margin_rem(6);
+        }
+
+        h1 {
+            font-weight: v.$font-weight-normal;
+            font-size: f.multiply_rem_size_by(2);
+            color: v.$blue-950;
+        }
+
+        p{
+            color: v.$gray-600;
+            font-size: x-small;
+            font-weight: v.$font-weight-normal;
+        }
+
+        button {
+            background-image: linear-gradient(20deg, v.$cyan-400, v.$green-500);
+            border-radius: 50px;
+            border: none;
+            background-color: transparent;
+            color: v.$gray-100;
+            font-weight: v.$font-weight-normal;
+            transition: opacity 300ms ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.7;
+            }
+        }
+
+    }
+}

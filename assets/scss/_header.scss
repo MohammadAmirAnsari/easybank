@@ -5,22 +5,59 @@
 @use 'animations' as a;
 
 .header {
-
-    background-color: v.$cyan-400;
+z-index: 1;
+    background-color: v.$gray-50;
     position: sticky;
     top: 0;
 
     .overlay {
+        position: fixed;
+        inset: 54px 0 0 0;
+        opacity: 0;
+        visibility: hidden;
+        background-image: linear-gradient(to bottom, v.$blue-950 0%, v.$gray-600 50%);
+        transition: opacity 300ms ease, visibility 300ms;
+        background-color: transparent;
 
-        animation: fade-out 300ms ease-in-out forwards;
+        @include m.device-up('md'){
+            display: none;
+        }
+
+        .nav__list {
+            display: flex;
+            flex-direction: column;
+            background-color: v.$gray-50;
+            margin: f.generate_margin_rem(6);
+            padding-block: f.generate_padding_rem(5);
+            transform: translateY(-24px);
+            transition: transform 300ms ease;
+            border-radius: 5px;
+
+
+            a {
+                display: block;
+                font-weight: v.$font-weight-normal;
+                color: v.$blue-950;
+                font-size: large;
+                text-decoration: none;
+                width: 100%;
+                text-align: center;
+                padding-block: f.generate_margin_rem(4);
+            }
+        }
 
         &--active {
-            position: fixed;
-            inset: 54px 0 0 0;
-            animation: fade-in 300ms ease-in-out forwards;
-            background-image: linear-gradient(to bottom, v.$blue-950 0%, v.$gray-600 80%);
+            opacity: 1;
+            visibility: visible;
+
+            .nav__list {
+                transform: translateY(0px);
+            }
+
         }
+
     }
+
 
     &__nav {
 
@@ -91,6 +128,10 @@
     }
 
     &__hamburger {
+
+        &:hover {
+            cursor: pointer;
+        }
 
         @include m.device-up('md') {
             display: none;

@@ -27,6 +27,14 @@ body {
     font-size: clamp(1.00rem, calc(0.868rem + 0.658vw), 1.50rem);
 }
 
+.no-scroll{
+    overflow: hidden;
+}
+
+h1{
+    margin: 0;
+}
+
 // utility classes
 .flex {
     display: flex;
@@ -77,6 +85,27 @@ body {
         }
     }
 
+    &s {
+        &-1 {
+            margin-inline-start: f.generate_margin_rem(1);
+        }
+
+        &-2 {
+            margin-inline-start: f.generate_margin_rem(2);
+        }
+
+        &-3 {
+            margin-inline-start: f.generate_margin_rem(3);
+        }
+
+        &-4 {
+            margin-inline-start: f.generate_margin_rem(4);
+        }
+
+        &-5 {
+            margin-inline-start: f.generate_margin_rem(5);
+        }
+    }
     &e {
         &-1 {
             margin-inline-end: f.generate_margin_rem(1);
@@ -126,6 +155,15 @@ body {
     }
 
     &s {
+        &-2 {
+            padding-inline-start: f.generate_padding_rem(2);
+        }
+        &-3 {
+            padding-inline-start: f.generate_padding_rem(3);
+        }
+        &-4 {
+            padding-inline-start: f.generate_padding_rem(4);
+        }
         &-6 {
             padding-inline-start: f.generate_padding_rem(6);
         }
@@ -141,6 +179,15 @@ body {
 
     &e {
 
+        &-2 {
+            padding-inline-end: f.generate_padding_rem(2);
+        }
+        &-3 {
+            padding-inline-end: f.generate_padding_rem(3);
+        }
+        &-4 {
+            padding-inline-end: f.generate_padding_rem(4);
+        }
         &-6 {
             padding-inline-end: f.generate_padding_rem(6);
         }
