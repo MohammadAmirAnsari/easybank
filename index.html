@@ -25,50 +25,55 @@
 </head>
 
 <body>
-  <header class="header ps-6 pe-6 pt-4 pb-4">
-    <div class="overlay">
-      <div class="nav__list">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Blog</a>
-        <a href="#">Careers</a>
+  <header class="header section">
+    <div class="container">
+      <div class="overlay">
+        <div class="nav__list">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>
       </div>
+
+      <nav class="header__nav flex flex-justify-between flex-align-center">
+        <a href="/" class="header__logo">
+          <img src="assets/images/logo-dark.svg" alt="Easybank Logo">
+        </a>
+
+        <ul class="flex">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+
+        <button class="ps-8 pe-8 pt-4 pb-4">Request Invite</button>
+        <a class="header__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </nav>
     </div>
-
-    <nav class="container header__nav flex flex-justify-around flex-align-center">
-      <a href="/" class="header__logo">
-        <img src="assets/images/logo-dark.svg" alt="Easybank Logo">
-      </a>
-
-      <ul class="flex">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Careers</a></li>
-      </ul>
-
-      <button class="ps-8 pe-8 pt-4 pb-4">Request Invite</button>
-      <a class="header__hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-    </nav>
-
   </header>
 
-  <section class="hero container ps-6 pe-6">
-    <img class="hero__img" src="assets/images/image-mockups.png" alt="Mobile Image">
-    <div class="hero__content ps-4 pe-4">
-      <h1>Next generation digital banking</h1>
-      <p>
-        Take your financial life online. Your Digitalbank account will be a one-stop-shop for spending, saving,
-        budgeting, investing, and much more.
-      </p>
+  <section class="hero section">
+    <div class="container">
+      <div class="hero__img">
+        <img src="assets/images/image-mockups.png" alt="Mobile Image">
+      </div>
+      <div class="hero__content">
+        <h1>Next generation digital banking</h1>
+        <p>
+          Take your financial life online. Your Digitalbank account will be a one-stop-shop for spending, saving,
+          budgeting, investing, and much more.
+        </p>
 
-      <button class="ps-8 pe-8 pt-4 pb-4">Request Invite</button>
+        <button class="ps-8 pe-8 pt-4 pb-4">Request Invite</button>
+      </div>
     </div>
   </section>
 

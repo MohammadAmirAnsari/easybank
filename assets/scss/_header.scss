@@ -5,8 +5,9 @@
 @use 'animations' as a;
 
 .header {
-z-index: 1;
+    z-index: 1;
     background-color: v.$gray-50;
+    padding-block: f.generate_padding_rem(4);
     position: sticky;
     top: 0;
 
@@ -19,7 +20,7 @@ z-index: 1;
         transition: opacity 300ms ease, visibility 300ms;
         background-color: transparent;
 
-        @include m.device-up('md'){
+        @include m.device-up('md') {
             display: none;
         }
 
@@ -42,7 +43,14 @@ z-index: 1;
                 text-decoration: none;
                 width: 100%;
                 text-align: center;
-                padding-block: f.generate_margin_rem(4);
+                padding-block: f.generate_padding_rem(4);
+                transition: background-color 300ms ease;
+
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                    background-color: v.$gray-100;
+                }
             }
         }
 
@@ -113,14 +121,12 @@ z-index: 1;
                     text-decoration: none;
                     color: v.$gray-600;
                     text-decoration-color: white;
-                    transition: all 300ms ease-in-out;
+                    transition: border-bottom 300ms ease-in-out;
 
                     &:hover {
                         color: v.$blue-950;
-                        text-decoration: underline;
-                        text-decoration-thickness: 5px;
-                        text-decoration-color: v.$green-500;
-                        text-underline-offset: 40px;
+                        border-bottom: 5px solid v.$green-500;
+                        padding-bottom:20px;
                     }
                 }
             }

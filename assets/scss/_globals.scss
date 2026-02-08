@@ -27,11 +27,22 @@ body {
     font-size: clamp(1.00rem, calc(0.868rem + 0.658vw), 1.50rem);
 }
 
-.no-scroll{
+.section {
+    width: 100%;
+}
+
+.container {
+    max-width: 1160px;
+    border: 1px solid;
+    margin-inline: auto;
+    padding-inline: f.generate_padding_rem(6);
+}
+
+.no-scroll {
     overflow: hidden;
 }
 
-h1{
+h1 {
     margin: 0;
 }
 
@@ -106,6 +117,7 @@ h1{
             margin-inline-start: f.generate_margin_rem(5);
         }
     }
+
     &e {
         &-1 {
             margin-inline-end: f.generate_margin_rem(1);
@@ -158,12 +170,15 @@ h1{
         &-2 {
             padding-inline-start: f.generate_padding_rem(2);
         }
+
         &-3 {
             padding-inline-start: f.generate_padding_rem(3);
         }
+
         &-4 {
             padding-inline-start: f.generate_padding_rem(4);
         }
+
         &-6 {
             padding-inline-start: f.generate_padding_rem(6);
         }
@@ -182,12 +197,15 @@ h1{
         &-2 {
             padding-inline-end: f.generate_padding_rem(2);
         }
+
         &-3 {
             padding-inline-end: f.generate_padding_rem(3);
         }
+
         &-4 {
             padding-inline-end: f.generate_padding_rem(4);
         }
+
         &-6 {
             padding-inline-end: f.generate_padding_rem(6);
         }
@@ -199,8 +217,8 @@ h1{
 }
 
 @each $breakpoint, $size in v.$breakpoint_map {
-    .container {
-        @include m.device-up($breakpoint){
+    .container-#{$breakpoint} {
+        @include m.device-up($breakpoint) {
             width: 100%;
             max-width: calc($size - 2rem);
             margin-inline: auto;

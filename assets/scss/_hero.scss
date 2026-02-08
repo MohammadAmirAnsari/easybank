@@ -4,22 +4,22 @@
 
 .hero {
     background-image: url("./../images/bg-intro-mobile.svg");
-    background-position: top;
-    transform: translateY(-10%);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center top;
+    transform: translateY(-19vw);
 
-    .hero__img {
-        width: 100%;
-        max-width: 768px;
-        transform: translateY(-10%);
+    img {
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+        max-width: 90vw;
+        transform: translateY(-12%);
     }
 
     &__content {
         text-align: center;
         padding-block-end: f.generate_padding_rem(8);
 
-        > * {
+        >* {
             margin-bottom: f.generate_margin_rem(6);
         }
 
@@ -29,9 +29,9 @@
             color: v.$blue-950;
         }
 
-        p{
+        p {
             color: v.$gray-600;
-            font-size: x-small;
+            font-size: f.multiply_rem_size_by(0.75);
             font-weight: v.$font-weight-normal;
         }
 
@@ -51,4 +51,36 @@
         }
 
     }
+
+    // @include m.device-up('md') {
+
+    //     background-image: url('./../images/bg-intro-desktop.svg');
+    //     transform: translate(0,0);
+    //     background-position: 100% top;
+    //     background-size: contain;
+
+    //     .container {
+
+    //         display: flex;
+    //         justify-content: end;
+    //         align-items: end;
+    //         margin: auto;
+    //         overflow: hidden;
+
+    //         .hero__img {
+    //             transform: translate(20%, 6%);
+    //             order: 2;
+    //         }
+
+    //         .hero__content {
+    //             order: 1;
+
+    //             h1 {
+    //                 font-size: f.multiply_rem_size_by(3);
+    //                 text-align: start;
+    //             }
+
+    //         }
+    //     }
+    // }
 }
