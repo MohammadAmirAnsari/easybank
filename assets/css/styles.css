@@ -28,7 +28,6 @@ body {
 
 .container {
   max-width: 1160px;
-  border: 1px solid;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
@@ -216,7 +215,6 @@ h1 {
 .header {
   z-index: 1;
   background-color: hsl(0, 0%, 98%);
-  padding-block: 1rem;
   position: sticky;
   top: 0;
 }
@@ -265,6 +263,9 @@ h1 {
 }
 .header .overlay--active .nav__list {
   transform: translateY(0px);
+}
+.header__nav {
+  padding-block: 0.5rem;
 }
 @media (max-width: 767.98px) {
   .header__nav {
@@ -358,16 +359,32 @@ h1 {
 }
 
 .hero {
+  background-color: hsl(0, 0%, 98%);
+}
+.hero .container {
+  padding-inline: 0;
+}
+.hero .hero__img {
+  position: relative;
+}
+.hero .hero__img::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("./../images/bg-intro-mobile.svg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
   transform: translateY(-19vw);
 }
-.hero img {
+.hero .hero__img img {
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
   max-width: 90vw;
-  transform: translateY(-12%);
+  display: block;
+  margin: auto;
+  transform: translateY(-32vw);
 }
 .hero__content {
   text-align: center;
@@ -400,29 +417,39 @@ h1 {
   opacity: 0.7;
 }
 @media (min-width: 768px) {
-  .hero {
-    background-image: url("./../images/bg-intro-desktop.svg");
-    transform: translate(0, 0);
-    background-position: 100% top;
-    background-size: contain;
-  }
   .hero .container {
     display: flex;
-    justify-content: end;
-    align-items: end;
-    margin: auto;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: start;
+    padding-inline-start: 1.5rem;
+  }
+  .hero .hero__img {
     overflow: hidden;
+    flex: 1.5 1 0;
   }
-  .hero .container .hero__img {
-    transform: translate(20%, 6%);
-    order: 2;
+  .hero .hero__img::before {
+    background-image: url("./../images/bg-intro-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    transform: translate(5%, -25%);
   }
-  .hero .container .hero__content {
-    order: 1;
+  .hero .hero__img img {
+    max-width: 90%;
+    transform: translate(23%, -17%);
   }
-  .hero .container .hero__content h1 {
-    font-size: 3rem;
+  .hero .hero__content {
+    align-self: self-start;
+    margin-top: 120px;
+    flex: 1 1 0;
     text-align: start;
+  }
+  .hero .hero__content h1 {
+    font-size: 3rem;
+  }
+  .hero .hero__content p {
+    font-size: 1.2rem;
   }
 }
 

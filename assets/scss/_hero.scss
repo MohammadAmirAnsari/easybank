@@ -3,16 +3,35 @@
 @use 'functions' as f;
 
 .hero {
-    background-image: url("./../images/bg-intro-mobile.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center top;
-    transform: translateY(-19vw);
+    background-color: v.$gray-50;
 
-    img {
-        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
-        max-width: 90vw;
-        transform: translateY(-12%);
+    .container {
+        padding-inline: 0;
+    }
+
+    .hero__img {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("./../images/bg-intro-mobile.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top;
+            transform: translateY(-19vw);
+        }
+
+        img {
+            filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+            max-width: 90vw;
+            display: block;
+            margin: auto;
+            transform: translateY(-32vw);
+        }
     }
 
     &__content {
@@ -52,35 +71,51 @@
 
     }
 
-    // @include m.device-up('md') {
+    @include m.device-up('md') {
 
-    //     background-image: url('./../images/bg-intro-desktop.svg');
-    //     transform: translate(0,0);
-    //     background-position: 100% top;
-    //     background-size: contain;
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: start;
+            padding-inline-start: f.generate_padding_rem(6);
 
-    //     .container {
+        }
 
-    //         display: flex;
-    //         justify-content: end;
-    //         align-items: end;
-    //         margin: auto;
-    //         overflow: hidden;
+        .hero__img {
+            overflow: hidden;
 
-    //         .hero__img {
-    //             transform: translate(20%, 6%);
-    //             order: 2;
-    //         }
+            flex: 1.5 1 0;
 
-    //         .hero__content {
-    //             order: 1;
+            &::before {
+                background-image: url('./../images/bg-intro-desktop.svg');
+                background-repeat: no-repeat;
+                background-position: left bottom;
+                background-size: cover;
+                transform: translate(5%, -25%);
 
-    //             h1 {
-    //                 font-size: f.multiply_rem_size_by(3);
-    //                 text-align: start;
-    //             }
+            }
 
-    //         }
-    //     }
-    // }
+            img {
+                max-width: 90%;
+                transform: translate(23%, -17%);
+            }
+        }
+
+        .hero__content {
+            // transform: translate(0, -35%);
+            align-self: self-start;
+            margin-top: 120px;
+            flex: 1 1 0;
+            text-align: start;
+
+            h1 {
+                font-size: f.multiply_rem_size_by(3);
+            }
+
+            p {
+                font-size: f.multiply_rem_size_by(1.2);
+            }
+        }
+    }
 }
