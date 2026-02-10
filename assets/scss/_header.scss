@@ -67,7 +67,10 @@
 
 
     &__nav {
-    padding-block: f.generate_padding_rem(2);
+        padding-block: f.generate_padding_rem(2);
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
 
         @include m.device-below('md') {
             justify-content: space-between;
@@ -126,7 +129,7 @@
                     &:hover {
                         color: v.$blue-950;
                         border-bottom: 5px solid v.$green-500;
-                        padding-bottom:20px;
+                        padding-bottom: 20px;
                     }
                 }
             }
