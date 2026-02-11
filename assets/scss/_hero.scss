@@ -4,10 +4,9 @@
 
 .section__hero {
     background-color: v.$gray-50;
-    overflow: hidden;
-
 
     .hero {
+        overflow: hidden;
         padding-inline: 0;
 
         .hero__img {
@@ -78,7 +77,8 @@
             flex-direction: row-reverse;
             justify-content: space-between;
             align-items: start;
-            padding-inline-start: f.generate_padding_rem(6);
+            padding-inline-end: f.generate_padding_rem(6);
+            height: auto;
 
             .hero__img {
                 flex: 2 1 0;
@@ -88,14 +88,13 @@
                     background-repeat: no-repeat;
                     background-position: left bottom;
                     background-size: cover;
-                    // transform: translate(5%, -25%);
-                    transform: translate(0,0);
-
+                    transform: translate(7%, -25%);
                 }
 
                 img {
-                    max-width: 90%;
-                    // transform: translate(23%, -17%);
+                    border: 1px solid;
+                    max-width: 100%;
+                    transform: translate(22%, -18%);
                 }
             }
 
@@ -113,6 +112,10 @@
                     font-size: f.multiply_rem_size_by(1.2);
                 }
             }
+        }
+
+        @include m.device-up('xl') {
+            padding-inline-start: f.generate_padding_rem(41);
         }
     }
 }

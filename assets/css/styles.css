@@ -27,9 +27,15 @@ body {
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 1440px;
   margin-inline: auto;
+  border: 1px solid #000;
   padding-inline: 1.5rem;
+}
+@media (min-width: 1280px) {
+  .container {
+    padding-inline: 10.25rem;
+  }
 }
 
 .no-scroll {
@@ -270,12 +276,6 @@ h1 {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 767.98px) {
-  .header__nav {
-    justify-content: space-between;
-    max-width: 100vw;
-  }
-}
 .header__nav button {
   background-image: linear-gradient(20deg, hsl(192, 69%, 51%), hsl(136, 64%, 51%));
   border-radius: 50px;
@@ -284,22 +284,26 @@ h1 {
   color: hsl(220, 16%, 96%);
   font-weight: 400;
   transition: opacity 300ms ease-in-out;
+  display: none;
 }
 .header__nav button:hover {
   cursor: pointer;
   opacity: 0.7;
 }
-@media (max-width: 767.98px) {
+@media (min-width: 768px) {
   .header__nav button {
-    display: none;
+    display: block;
   }
 }
 .header__nav a {
   line-height: 0;
 }
-@media (max-width: 767.98px) {
+.header__nav ul {
+  display: none;
+}
+@media (min-width: 768px) {
   .header__nav ul {
-    display: none;
+    display: flex;
   }
 }
 .header__nav ul {
@@ -363,9 +367,9 @@ h1 {
 
 .section__hero {
   background-color: hsl(0, 0%, 98%);
-  overflow: hidden;
 }
 .section__hero .hero {
+  overflow: hidden;
   padding-inline: 0;
 }
 .section__hero .hero .hero__img {
@@ -426,7 +430,8 @@ h1 {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: start;
-    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
+    height: auto;
   }
   .section__hero .hero .hero__img {
     flex: 2 1 0;
@@ -436,10 +441,12 @@ h1 {
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: cover;
-    transform: translate(0, 0);
+    transform: translate(7%, -25%);
   }
   .section__hero .hero .hero__img img {
-    max-width: 90%;
+    border: 1px solid;
+    max-width: 100%;
+    transform: translate(22%, -18%);
   }
   .section__hero .hero .hero__content {
     flex: 1 1 0;
@@ -450,6 +457,11 @@ h1 {
   }
   .section__hero .hero .hero__content p {
     font-size: 1.2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .section__hero .hero {
+    padding-inline-start: 10.25rem;
   }
 }
 

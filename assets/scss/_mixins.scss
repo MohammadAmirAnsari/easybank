@@ -61,7 +61,7 @@
 
 // apply style between devices
 @mixin device-between($start_device, $end_device) {
-    @media (min-width:map.get(v.$breakpoint_map, $device)) and (max-width:calc(map.get(v.$breakpoint_map, $device) - v.$minute_space_difference)) {
+    @media (min-width:map.get(v.$breakpoint_map, $start_device)) and (max-width:calc(map.get(v.$breakpoint_map, $end_device) - v.$minute_space_difference)) {
         @content;
     }
 }
