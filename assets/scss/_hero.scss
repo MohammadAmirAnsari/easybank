@@ -3,66 +3,37 @@
 @use 'functions' as f;
 
 .section__hero {
-    background-color: v.$gray-50;
-    position: relative;
-    // overflow: hidden;
-    bottom:32vw;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        aspect-ratio: 1;
-        background-image: url("./../images/bg-intro-mobile.svg");
-        background-size:100%;
-        background-repeat: no-repeat;
-        background-position: center top;
-    }
-    
-    
+    background-color: v.$gray-50;
+
     .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        // overflow: hidden;
-        // padding-inline: 0;
+        transform: translateY(-17vw);
 
         .hero__img {
-            border: 1px solid;
-            position: relative;
-            // bottom: 30vw;
+            display: flex;
+            flex-direction: column;
+            background-image: url("./../images/bg-intro-mobile.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top;
+            margin-inline: -1.5rem;
+            margin-block-end: -1.5rem;
 
-            // @include m.device-up('md'){
-            //     top: -34%;
-            // }
 
-
-            // &::before {
-            //     content: "";
-            //     position: absolute;
-            //     top: -19vw;
-            //     left: 0;
-            //     width: 100%;
-            //     height: 100%;
-            //     background-image: url("./../images/bg-intro-mobile.svg");
-            //     background-size: cover;
-            //     background-repeat: no-repeat;
-            //     background-position: center top;
-            // }
             img {
                 filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
-                width: 100%;
-                display: block;
-                // margin: auto;
+                width: 95%;
+                margin: auto;
+                transform: translateY(-17vw);
             }
         }
 
         &__content {
-            border: 1px solid #000;
             text-align: center;
-            padding-block-end: f.generate_padding_rem(8);
+            margin-inline: f.generate_margin_rem(2);
+            margin-bottom: f.generate_margin_rem(10);
+            ;
+
 
             >* {
                 margin-bottom: f.generate_margin_rem(6);
@@ -76,8 +47,8 @@
 
             p {
                 color: v.$gray-600;
-                font-size: f.multiply_rem_size_by(0.75);
-                font-weight: v.$font-weight-normal;
+                font-size: f.multiply_rem_size_by(0.7);
+                font-weight: v.$font-weight-large;
             }
 
             button {
@@ -97,59 +68,74 @@
                     cursor: pointer;
                     opacity: 0.7;
                 }
+
+                @include m.device-up('md'){
+                    margin: 0;
+                }
             }
 
         }
 
-        // @include m.device-up('md') {
+        @include m.device-up('md') {
 
-        //     display: flex;
-        //     flex-direction: row-reverse;
-        //     justify-content: space-between;
-        //     align-items: start;
-        //     padding-inline-end: f.generate_padding_rem(6);
-        //     height: auto;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: start;
+            align-items: center;
+            padding-inline-end: f.generate_padding_rem(0);
+            position: relative;
+            bottom: 50%;
+            // margin-inline-end: 0;
+            // overflow: hidden;
+            // height: auto;
+            transform: translateY(0%);
 
-        //     .hero__img {
-        //         flex: 2 1 0;
+            overflow: hidden;
 
-        //         &::before {
-        //             background-image: url('./../images/bg-intro-desktop.svg');
-        //             background-repeat: no-repeat;
-        //             background-position: left bottom;
-        //             background-size: cover;
-        //             top: -10vw;
-        //             right: -25%;
-        //         }
+            .hero__img {
+                flex: 70% 1 0;
 
-        //         img {
-        //             position: relative;
-        //             border: 1px solid gray;
-        //             max-width: 100%;
-        //             vertical-align: top;
-        //             top: -10vw;
-        //             // transform: translate(22%, -18%);
-        //         }
-        //     }
+                background-image: url('./../images/bg-intro-desktop.svg');
+                background-repeat: no-repeat;
+                background-position: left top;
+                background-size: cover;
+                // position: relative;
+                // bottom: 300px;
+                transform: translateX(6%);
 
-        //     .hero__content {
-        //         // align-self: self-start;
-        //         // margin-top: 120px;
-        //         flex: 1 1 0;
-        //         text-align: start;
+                img {
+                    transform: translateY(0);
+                    position: relative;
+                    // visibility: hidden;
+                    // border: 1px solid gray;
+                    max-width: 100%;
+                    // vertical-align: top;
+                    // top: 10vw;
+                    transform: translate(22%, 18%);
+                }
+            }
 
-        //         h1 {
-        //             font-size: f.multiply_rem_size_by(3);
-        //         }
+            .hero__content {
+                margin:10rem 0 1rem 0;
+                text-align: start;
 
-        //         p {
-        //             font-size: f.multiply_rem_size_by(1.2);
-        //         }
-        //     }
-        // }
+                h1 {
+                    font-size: f.multiply_rem_size_by(3);
+                }
 
-        // @include m.device-up('xl') {
-        //     padding-inline-start: f.generate_padding_rem(41);
-        // }
+                p {
+                    font-size: f.multiply_rem_size_by(1.1);
+                }
+            }
+        }
+
+        @include m.device-up('xl') {
+            padding-inline-start: f.generate_padding_rem(41);
+        }
     }
+
+    @include m.device-up('md') {
+        margin-top: -17vw;
+    }
+
 }

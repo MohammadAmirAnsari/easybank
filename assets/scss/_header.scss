@@ -47,12 +47,12 @@
             margin-block-start: 0;
             opacity: 0;
             visibility: hidden;
-            transition: margin-block-start 300ms ease, opacity 300ms ease, visibility 300ms;
             background-color: v.$gray-50;
             padding-block: f.generate_padding_rem(8);
             border-radius: 5px;
-
+            
             &.menu--open {
+                transition: margin-block-start 300ms ease, opacity 300ms ease, visibility 300ms;
                 visibility: visible;
                 opacity: 1;
                 margin-block-start: f.generate_padding_rem(6);

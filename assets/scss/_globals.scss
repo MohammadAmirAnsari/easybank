@@ -27,7 +27,16 @@ body {
     font-size: clamp(1.00rem, calc(0.868rem + 0.658vw), 1.50rem);
 }
 
-ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+    margin: 0;
+    padding: 0;
     padding: 0;
     margin: 0;
 }
@@ -39,7 +48,6 @@ ul {
 .container {
     max-width: 1440px;
     margin-inline: auto;
-    border: 1px solid #000;
     padding-inline: f.generate_padding_rem(6);
 
 
