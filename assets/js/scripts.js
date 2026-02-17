@@ -4,14 +4,10 @@ let menu = document.querySelector('header ul')
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('hamburger--open')
-    overlay.classList.toggle('overlay--active')
+    overlay.classList.toggle('overlay--open')
     menu.classList.toggle('menu--open')
-    
-    if (overlay.classList.contains('overlay--active')) {
-        document.body.classList.add('no-scroll')
-    }else{
-        document.body.classList.remove('no-scroll')
-    }
+
+    document.body.classList.add('no-scroll', overlay.classList.contains('overlay--open'))
 
     // if (menu.classList.contains('open')) {
     //     menu.classList.add('no-scroll')

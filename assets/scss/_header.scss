@@ -16,10 +16,10 @@
         opacity: 0;
         visibility: hidden;
         background-image: linear-gradient(to bottom, v.$blue-950 0%, v.$gray-600 50%);
-        transition: opacity 300ms ease, visibility 300ms;
+        transition: opacity 3000ms ease, visibility 3000ms;
         background-color: transparent;
 
-        &--active {
+        &--open {
             opacity: 1;
             visibility: visible;
         }
@@ -37,7 +37,8 @@
         justify-content: space-between;
         align-items: center;
 
-        ul {
+        ul.menu {
+
             z-index: 1;
             position: absolute;
             top: 100%;
@@ -50,9 +51,9 @@
             background-color: v.$gray-50;
             padding-block: f.generate_padding_rem(8);
             border-radius: 5px;
-            
-            &.menu--open {
-                transition: margin-block-start 300ms ease, opacity 300ms ease, visibility 300ms;
+
+            &--open {
+                transition: margin-block-start 3000ms ease, opacity 3000ms ease, visibility 3000ms;
                 visibility: visible;
                 opacity: 1;
                 margin-block-start: f.generate_padding_rem(6);
@@ -61,7 +62,7 @@
 
             li {
                 list-style-type: none;
-                transition: transform 300ms ease;
+                transition: transform 3000ms ease;
 
 
                 a {
@@ -113,7 +114,7 @@
                         text-decoration: none;
                         color: v.$gray-600;
                         text-decoration-color: white;
-                        transition: border-bottom 300ms ease-in-out;
+                        transition: border-bottom 3000ms ease-in-out;
 
                         &:hover {
                             color: v.$blue-950;
@@ -138,7 +139,7 @@
                 background-color: transparent;
                 color: v.$gray-100;
                 font-weight: v.$font-weight-normal;
-                transition: opacity 300ms ease-in-out;
+                transition: opacity 3000ms ease-in-out;
 
                 &:hover {
                     cursor: pointer;
@@ -160,7 +161,7 @@
             width: 26px;
             height: 2px;
             background-color: v.$gray-600;
-            transition: transform 300ms ease-in;
+            transition: transform 3000ms ease-in;
 
             &:first-child {
                 transform: translateY(0px) rotate(0deg);

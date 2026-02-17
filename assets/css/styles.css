@@ -40,15 +40,16 @@ p {
   width: 100%;
 }
 
+.wrapper {
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  border: 1px solid red;
+}
+
 .container {
   max-width: 1440px;
   margin-inline: auto;
-  padding-inline: 1.5rem;
-}
-@media (min-width: 1280px) {
-  .container {
-    padding-inline: 10.25rem;
-  }
 }
 
 .no-scroll {
@@ -135,10 +136,10 @@ a {
   opacity: 0;
   visibility: hidden;
   background-image: linear-gradient(to bottom, hsl(233, 26%, 24%) 0%, hsl(233, 8%, 62%) 50%);
-  transition: opacity 300ms ease, visibility 300ms;
+  transition: opacity 3000ms ease, visibility 3000ms;
   background-color: transparent;
 }
-.header .overlay--active {
+.header .overlay--open {
   opacity: 1;
   visibility: visible;
 }
@@ -153,7 +154,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-.header__nav ul {
+.header__nav ul.menu {
   z-index: 1;
   position: absolute;
   top: 100%;
@@ -166,18 +167,18 @@ a {
   background-color: hsl(0, 0%, 98%);
   padding-block: 2rem;
   border-radius: 5px;
+  transition: margin-block-start 3000ms ease, opacity 3000ms ease, visibility 3000ms;
 }
 .header__nav ul.menu--open {
-  transition: margin-block-start 300ms ease, opacity 300ms ease, visibility 300ms;
   visibility: visible;
   opacity: 1;
   margin-block-start: 1.5rem;
 }
-.header__nav ul li {
+.header__nav ul.menu li {
   list-style-type: none;
-  transition: transform 300ms ease;
+  transition: transform 3000ms ease;
 }
-.header__nav ul li a {
+.header__nav ul.menu li a {
   display: block;
   font-weight: 400;
   color: hsl(233, 26%, 24%);
@@ -186,12 +187,12 @@ a {
   text-align: center;
   padding-block: 1.5rem;
 }
-.header__nav ul li a:hover, .header__nav ul li a:focus {
+.header__nav ul.menu li a:hover, .header__nav ul.menu li a:focus {
   text-decoration: underline;
   background-color: hsl(220, 16%, 96%);
 }
 @media (min-width: 768px) {
-  .header__nav ul {
+  .header__nav ul.menu {
     display: flex;
     padding: 0;
     position: static;
@@ -204,29 +205,29 @@ a {
     background: none;
     border: none;
   }
-  .header__nav ul li {
+  .header__nav ul.menu li {
     color: hsl(233, 8%, 62%);
     font-size: 0.875rem;
     font-weight: 400;
   }
-  .header__nav ul li:not(:last-child) {
+  .header__nav ul.menu li:not(:last-child) {
     margin-inline-end: 1rem;
   }
 }
 @media (min-width: 768px) and (min-width: 1024px) {
-  .header__nav ul li:not(:last-child) {
+  .header__nav ul.menu li:not(:last-child) {
     margin-inline-end: 2rem;
   }
 }
 @media (min-width: 768px) {
-  .header__nav ul li a {
+  .header__nav ul.menu li a {
     cursor: pointer;
     text-decoration: none;
     color: hsl(233, 8%, 62%);
     text-decoration-color: white;
-    transition: border-bottom 300ms ease-in-out;
+    transition: border-bottom 3000ms ease-in-out;
   }
-  .header__nav ul li a:hover {
+  .header__nav ul.menu li a:hover {
     color: hsl(233, 26%, 24%);
     border-bottom: 5px solid hsl(136, 64%, 51%);
     padding-bottom: 20px;
@@ -246,7 +247,7 @@ a {
     background-color: transparent;
     color: hsl(220, 16%, 96%);
     font-weight: 400;
-    transition: opacity 300ms ease-in-out;
+    transition: opacity 3000ms ease-in-out;
   }
   .header__nav button:hover {
     cursor: pointer;
@@ -261,7 +262,7 @@ a {
   width: 26px;
   height: 2px;
   background-color: hsl(233, 8%, 62%);
-  transition: transform 300ms ease-in;
+  transition: transform 3000ms ease-in;
 }
 .header__hamburger > span:first-child {
   transform: translateY(0px) rotate(0deg);
@@ -290,30 +291,46 @@ a {
 
 .section__hero {
   background-color: hsl(0, 0%, 98%);
+  margin-block-start: -17vw;
 }
 .section__hero .hero {
-  transform: translateY(-17vw);
-}
-.section__hero .hero .hero__img {
   display: flex;
   flex-direction: column;
-  background-image: url("./../images/bg-intro-mobile.svg");
-  background-size: cover;
+}
+.section__hero .hero__img {
+  position: relative;
+}
+.section__hero .hero__img::before {
+  content: "";
+  position: absolute;
+  bottom: 16vw;
+  width: 100%;
+  height: 100%;
+  background-image: url("./../images/image-mockups.png");
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center top;
-  margin-inline: -1.5rem;
-  margin-block-end: -1.5rem;
 }
-.section__hero .hero .hero__img img {
-  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
-  width: 95%;
-  margin: auto;
-  transform: translateY(-17vw);
+@media (min-width: 768px) {
+  .section__hero .hero__img::before {
+    bottom: 0;
+  }
+}
+.section__hero .hero__img img {
+  object-fit: contain;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .section__hero .hero__img img {
+    content: url("../images/bg-intro-desktop.svg");
+  }
 }
 .section__hero .hero__content {
   text-align: center;
   margin-inline: 0.5rem;
-  margin-bottom: 2.5rem;
+  margin-block-start: -1.5rem;
+  margin-block-end: 2.5rem;
 }
 .section__hero .hero__content > * {
   margin-bottom: 1.5rem;
@@ -352,49 +369,14 @@ a {
 }
 @media (min-width: 768px) {
   .section__hero .hero {
-    display: flex;
     flex-direction: row-reverse;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    padding-inline-end: 0rem;
-    position: relative;
-    bottom: 50%;
-    transform: translateY(0%);
-    overflow: hidden;
-  }
-  .section__hero .hero .hero__img {
-    flex: 70% 1 0;
-    background-image: url("./../images/bg-intro-desktop.svg");
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: cover;
-    transform: translateX(6%);
-  }
-  .section__hero .hero .hero__img img {
-    transform: translateY(0);
-    position: relative;
-    max-width: 100%;
-    transform: translate(22%, 18%);
-  }
-  .section__hero .hero .hero__content {
-    margin: 10rem 0 1rem 0;
-    text-align: start;
-  }
-  .section__hero .hero .hero__content h1 {
-    font-size: 3rem;
-  }
-  .section__hero .hero .hero__content p {
-    font-size: 1.1rem;
-  }
-}
-@media (min-width: 1280px) {
-  .section__hero .hero {
-    padding-inline-start: 10.25rem;
   }
 }
 @media (min-width: 768px) {
   .section__hero {
-    margin-top: -17vw;
+    margin-block-start: 0;
   }
 }
 
