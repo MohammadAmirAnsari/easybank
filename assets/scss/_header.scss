@@ -16,7 +16,7 @@
         opacity: 0;
         visibility: hidden;
         background-image: linear-gradient(to bottom, v.$blue-950 0%, v.$gray-600 50%);
-        transition: opacity 3000ms ease, visibility 3000ms;
+        transition: opacity 300ms ease, visibility 300ms;
         background-color: transparent;
 
         &--open {
@@ -51,19 +51,47 @@
             background-color: v.$gray-50;
             padding-block: f.generate_padding_rem(8);
             border-radius: 5px;
+            transition: margin-block-start 300ms ease, opacity 300ms ease;
 
             &--open {
-                transition: margin-block-start 3000ms ease, opacity 3000ms ease, visibility 3000ms;
                 visibility: visible;
                 opacity: 1;
                 margin-block-start: f.generate_padding_rem(6);
 
             }
 
+            @include m.device-up('md') {
+                display: flex;
+                padding: 0;
+                position: static;
+                inset: 0;
+                visibility: visible;
+                opacity: 1;
+                transform: none;
+                padding: 0;
+                width: auto;
+                background: none;
+                border: none;
+            }
+
             li {
                 list-style-type: none;
-                transition: transform 3000ms ease;
+                transition: transform 300ms ease;
 
+                @include m.device-up('md') {
+                    color: v.$gray-600;
+                    font-size: f.multiply_rem_size_by(0.875);
+                    font-weight: v.$font-weight-normal;
+
+                    &:not(:last-child) {
+
+                        margin-inline-end: f.multiply_rem_size_by(1);
+
+                        @include m.device-up('lg') {
+                            margin-inline-end: f.multiply_rem_size_by(2);
+                        }
+                    }
+                }
 
                 a {
                     display: block;
@@ -79,42 +107,13 @@
                         text-decoration: underline;
                         background-color: v.$gray-100;
                     }
-                }
-            }
 
-            @include m.device-up('md') {
-                display: flex;
-                padding: 0;
-                position: static;
-                inset: 0;
-                visibility: visible;
-                opacity: 1;
-                transform: none;
-                padding: 0;
-                width: auto;
-                background: none;
-                border: none;
-
-                li {
-                    color: v.$gray-600;
-                    font-size: f.multiply_rem_size_by(0.875);
-                    font-weight: v.$font-weight-normal;
-
-                    &:not(:last-child) {
-
-                        margin-inline-end: f.multiply_rem_size_by(1);
-
-                        @include m.device-up('lg') {
-                            margin-inline-end: f.multiply_rem_size_by(2);
-                        }
-                    }
-
-                    a {
+                    @include m.device-up('md') {
                         cursor: pointer;
                         text-decoration: none;
                         color: v.$gray-600;
                         text-decoration-color: white;
-                        transition: border-bottom 3000ms ease-in-out;
+                        transition: border-bottom 300ms ease-in-out;
 
                         &:hover {
                             color: v.$blue-950;
@@ -139,7 +138,7 @@
                 background-color: transparent;
                 color: v.$gray-100;
                 font-weight: v.$font-weight-normal;
-                transition: opacity 3000ms ease-in-out;
+                transition: opacity 300ms ease-in-out;
 
                 &:hover {
                     cursor: pointer;
@@ -161,7 +160,7 @@
             width: 26px;
             height: 2px;
             background-color: v.$gray-600;
-            transition: transform 3000ms ease-in;
+            transition: transform 300ms ease-in;
 
             &:first-child {
                 transform: translateY(0px) rotate(0deg);

@@ -7,7 +7,7 @@ hamburger.addEventListener('click', () => {
     overlay.classList.toggle('overlay--open')
     menu.classList.toggle('menu--open')
 
-    document.body.classList.add('no-scroll', overlay.classList.contains('overlay--open'))
+    document.body.classList.toggle('no-scroll', overlay.classList.contains('overlay--open'))
 
     // if (menu.classList.contains('open')) {
     //     menu.classList.add('no-scroll')
