@@ -295,10 +295,11 @@ a {
 .section__hero {
   background-color: hsl(0, 0%, 98%);
   margin-block-start: -17vw;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .section__hero {
-    margin-block-start: -1vw;
+    margin-block-start: 0;
   }
 }
 .section__hero .hero {
@@ -311,11 +312,16 @@ a {
     justify-content: center;
     align-items: center;
     border: 1px solid red;
-    overflow: hidden;
   }
 }
 .section__hero .hero__img {
+  margin-inline: -1.5rem;
   position: relative;
+}
+@media (min-width: 768px) {
+  .section__hero .hero__img {
+    inset: 0;
+  }
 }
 .section__hero .hero__img::before {
   content: "";
@@ -327,19 +333,12 @@ a {
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: right top;
 }
 @media (min-width: 768px) {
   .section__hero .hero__img::before {
-    flex: 50% 1 0;
     bottom: 0;
-    overflow: visible;
   }
-}
-.section__hero .hero__img {
-  position: relative;
-  left: 10%;
-  top: -20%;
 }
 .section__hero .hero__img img {
   content: url("../images/bg-intro-mobile.svg");
@@ -349,8 +348,8 @@ a {
 @media (min-width: 768px) {
   .section__hero .hero__img img {
     border: 1px solid green;
+    position: relative;
     content: url("../images/bg-intro-desktop.svg");
-    object-fit: 100%;
   }
 }
 .section__hero .hero__content {
@@ -361,8 +360,7 @@ a {
 }
 @media (min-width: 768px) {
   .section__hero .hero__content {
-    flex: 50% 1 0;
-    justify-self: end;
+    text-align: start;
   }
 }
 .section__hero .hero__content > * {
