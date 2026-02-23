@@ -37,6 +37,10 @@
         justify-content: space-between;
         align-items: center;
 
+        @include m.device-up('md') {
+            padding-block: 0;
+        }
+
         ul.menu {
 
             z-index: 1;
@@ -94,31 +98,34 @@
                 }
 
                 a {
+                    cursor: pointer;
                     display: block;
                     font-weight: v.$font-weight-normal;
-                    color: v.$blue-950;
+                    color: v.$gray-600;
                     font-size: large;
                     text-decoration: none;
                     text-align: center;
-                    padding-block: f.generate_padding_rem(6);
+                    padding-block: f.generate_padding_rem(12);
+
+                    @include m.device-up('md') {
+                        text-decoration: none;
+                        background-image: linear-gradient(to right, v.$cyan-400, v.$green-500);
+                        background-position: 0 90px;
+                        background-repeat: no-repeat;
+                        background-size: 100% 0px;
+                        transition: background-size 300ms ease-in;
+                    }
 
                     &:hover,
                     &:focus {
                         text-decoration: underline;
                         background-color: v.$gray-100;
-                    }
+                        color: v.$blue-950;
 
-                    @include m.device-up('md') {
-                        cursor: pointer;
-                        text-decoration: none;
-                        color: v.$gray-600;
-                        text-decoration-color: white;
-                        transition: border-bottom 300ms ease-in-out;
-
-                        &:hover {
-                            color: v.$blue-950;
-                            border-bottom: 5px solid v.$green-500;
-                            padding-bottom: 20px;
+                        @include m.device-up('md') {
+                            text-decoration: none;
+                            background-color: transparent;
+                            background-size: 100% 5px;
                         }
                     }
                 }
