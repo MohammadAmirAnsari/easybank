@@ -60,16 +60,16 @@
 
         &__content {
             text-align: center;
-            margin-block-start: f.generate_margin_rem(2);
-            margin-block-end: f.generate_margin_rem(10);
-            padding-inline: f.generate_padding_rem(2);
+            margin-block-start: f.space(2);
+            margin-block-end: f.space(10);
+            padding-inline: f.space(2);
 
             @include m.device-up('md') {
                 text-align: start;
             }
 
             >* {
-                margin-bottom: f.generate_margin_rem(6);
+                margin-bottom: f.space(6);
             }
 
             h1 {
@@ -86,8 +86,8 @@
 
             button {
                 display: block;
-                padding-inline: f.generate_padding_rem(8);
-                padding-block: f.generate_padding_rem(4);
+                padding-inline: f.space(8);
+                padding-block: f.space(4);
                 background-image: linear-gradient(20deg, v.$cyan-400, v.$green-500);
                 border-radius: 50px;
                 border: none;
