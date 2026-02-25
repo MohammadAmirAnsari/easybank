@@ -129,8 +129,8 @@
                 font-size: large;
                 text-decoration: none;
                 text-align: center;
-                padding-block: f.space(12);
-
+                padding-block: f.space(6);
+                
                 @include m.device-up('md') {
                     text-decoration: none;
                     background-image: linear-gradient(to right, v.$cyan-400, v.$green-500);
@@ -138,13 +138,14 @@
                     background-repeat: no-repeat;
                     background-size: 100% 0px;
                     transition: background-size 300ms ease-in;
+                    padding-block: f.space(12);
                 }
 
                 &:hover,
                 &:focus {
+                    color: v.$blue-950;
                     text-decoration: underline;
                     background-color: v.$gray-100;
-                    color: v.$blue-950;
 
                     @include m.device-up('md') {
                         text-decoration: none;

@@ -238,7 +238,7 @@ a {
   font-size: large;
   text-decoration: none;
   text-align: center;
-  padding-block: 3rem;
+  padding-block: 1.5rem;
 }
 @media (min-width: 768px) {
   .header__menu li a {
@@ -248,6 +248,7 @@ a {
     background-repeat: no-repeat;
     background-size: 100% 0px;
     transition: background-size 300ms ease-in;
+    padding-block: 3rem;
   }
 }
 .header__menu li a:hover, .header__menu li a:focus {
