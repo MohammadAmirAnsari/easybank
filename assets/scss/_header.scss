@@ -10,7 +10,7 @@
     position: sticky;
     top: 0;
 
-    .overlay {
+    &__overlay {
         position: fixed;
         inset: 4.5rem 0 0 0;
         opacity: 0;
@@ -41,97 +41,6 @@
             padding-block: 0;
         }
 
-        ul.menu {
-
-            z-index: 1;
-            position: absolute;
-            top: 100%;
-            width: 90%;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-block-start: 0;
-            opacity: 0;
-            visibility: hidden;
-            background-color: v.$gray-50;
-            padding-block: f.generate_padding_rem(8);
-            border-radius: 5px;
-            transition: margin-block-start 300ms ease, opacity 300ms ease;
-
-            &--open {
-                visibility: visible;
-                opacity: 1;
-                margin-block-start: f.generate_padding_rem(6);
-
-            }
-
-            @include m.device-up('md') {
-                display: flex;
-                padding: 0;
-                position: static;
-                inset: 0;
-                visibility: visible;
-                opacity: 1;
-                transform: none;
-                padding: 0;
-                width: auto;
-                background: none;
-                border: none;
-            }
-
-            li {
-                list-style-type: none;
-                transition: transform 300ms ease;
-
-                @include m.device-up('md') {
-                    color: v.$gray-600;
-                    font-size: f.multiply_rem_size_by(0.875);
-                    font-weight: v.$font-weight-normal;
-
-                    &:not(:last-child) {
-
-                        margin-inline-end: f.multiply_rem_size_by(1);
-
-                        @include m.device-up('lg') {
-                            margin-inline-end: f.multiply_rem_size_by(2);
-                        }
-                    }
-                }
-
-                a {
-                    cursor: pointer;
-                    display: block;
-                    font-weight: v.$font-weight-normal;
-                    color: v.$gray-600;
-                    font-size: large;
-                    text-decoration: none;
-                    text-align: center;
-                    padding-block: f.generate_padding_rem(12);
-
-                    @include m.device-up('md') {
-                        text-decoration: none;
-                        background-image: linear-gradient(to right, v.$cyan-400, v.$green-500);
-                        background-position: 0 90px;
-                        background-repeat: no-repeat;
-                        background-size: 100% 0px;
-                        transition: background-size 300ms ease-in;
-                    }
-
-                    &:hover,
-                    &:focus {
-                        text-decoration: underline;
-                        background-color: v.$gray-100;
-                        color: v.$blue-950;
-
-                        @include m.device-up('md') {
-                            text-decoration: none;
-                            background-color: transparent;
-                            background-size: 100% 5px;
-                        }
-                    }
-                }
-            }
-        }
-
         button {
             display: none;
 
@@ -152,6 +61,97 @@
                     opacity: 0.7;
                 }
 
+            }
+        }
+    }
+
+    &__menu {
+
+        z-index: 1;
+        position: absolute;
+        top: 100%;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-block-start: 0;
+        opacity: 0;
+        visibility: hidden;
+        background-color: v.$gray-50;
+        padding-block: f.generate_padding_rem(8);
+        border-radius: 5px;
+        transition: margin-block-start 300ms ease, opacity 300ms ease;
+
+        &--open {
+            visibility: visible;
+            opacity: 1;
+            margin-block-start: f.generate_padding_rem(6);
+
+        }
+
+        @include m.device-up('md') {
+            display: flex;
+            padding: 0;
+            position: static;
+            inset: 0;
+            visibility: visible;
+            opacity: 1;
+            transform: none;
+            padding: 0;
+            width: auto;
+            background: none;
+            border: none;
+        }
+
+        li {
+            list-style-type: none;
+            transition: transform 300ms ease;
+
+            @include m.device-up('md') {
+                color: v.$gray-600;
+                font-size: f.multiply_rem_size_by(0.875);
+                font-weight: v.$font-weight-normal;
+
+                &:not(:last-child) {
+
+                    margin-inline-end: f.multiply_rem_size_by(1);
+
+                    @include m.device-up('lg') {
+                        margin-inline-end: f.multiply_rem_size_by(2);
+                    }
+                }
+            }
+
+            a {
+                cursor: pointer;
+                display: block;
+                font-weight: v.$font-weight-normal;
+                color: v.$gray-600;
+                font-size: large;
+                text-decoration: none;
+                text-align: center;
+                padding-block: f.generate_padding_rem(12);
+
+                @include m.device-up('md') {
+                    text-decoration: none;
+                    background-image: linear-gradient(to right, v.$cyan-400, v.$green-500);
+                    background-position: 0 90px;
+                    background-repeat: no-repeat;
+                    background-size: 100% 0px;
+                    transition: background-size 300ms ease-in;
+                }
+
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                    background-color: v.$gray-100;
+                    color: v.$blue-950;
+
+                    @include m.device-up('md') {
+                        text-decoration: none;
+                        background-color: transparent;
+                        background-size: 100% 5px;
+                    }
+                }
             }
         }
     }
@@ -182,7 +182,7 @@
             }
         }
 
-        &.hamburger--open {
+        &--open {
 
             >span:first-child {
                 transform: translateY(5px) rotate(45deg);

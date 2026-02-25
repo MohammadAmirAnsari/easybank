@@ -1,13 +1,13 @@
 let hamburger = document.querySelector('.header__hamburger')
-let overlay = document.querySelector('.overlay')
-let menu = document.querySelector('header ul')
+let overlay = document.querySelector('.header__overlay')
+let menu = document.querySelector('.header__menu')
 
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('hamburger--open')
-    overlay.classList.toggle('overlay--open')
-    menu.classList.toggle('menu--open')
+    hamburger.classList.toggle('header__hamburger--open')
+    overlay.classList.toggle('header__overlay--open')
+    menu.classList.toggle('header__menu--open')
 
-    document.body.classList.toggle('no-scroll', overlay.classList.contains('overlay--open'))
+    document.body.classList.toggle('no-scroll', overlay.classList.contains('header__overlay--open'))
 
     // if (menu.classList.contains('open')) {
     //     menu.classList.add('no-scroll')
