@@ -4,7 +4,9 @@
 
 .section__hero {
 
-    background-color: v.$gray-50;
+    background-image: linear-gradient(to bottom, v.$gray-50, white);
+
+    background-color: transparent;
     margin-block-start: -30vw;
 
     @include m.device-up('md') {
@@ -18,15 +20,15 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        
+
         @include m.device-up('md') {
             flex-direction: row;
             justify-content: center;
             align-items: center;
         }
-        
+
         &__bg {
-            
+
             position: absolute;
             inset: 0;
             overflow-y: clip;
@@ -60,13 +62,12 @@
 
             img {
                 object-fit: contain;
-                border: 1px solid blue;
                 max-width: 100%;
                 filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 
                 @include m.device-up('md') {
                     flex: 1 0 50%;
-                    transform: translate(40%,-4%) scale(1.4);
+                    transform: translate(40%, -4%) scale(1.4);
                 }
             }
 
@@ -87,7 +88,6 @@
                 flex: 1 0 50%;
                 order: 1;
                 text-align: start;
-                border: 1px solid;
             }
 
             >* {

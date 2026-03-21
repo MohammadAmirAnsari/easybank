@@ -40,13 +40,11 @@ p {
   max-inline-size: 1160px;
   margin-inline: auto;
   padding-inline: 1.5rem;
-  border: 1px solid red;
 }
 
 .container {
   max-width: 1440px;
   margin-inline: auto;
-  border: 1px solid blue;
 }
 
 .no-scroll {
@@ -123,7 +121,7 @@ a {
 }
 .header {
   z-index: 5;
-  background-color: hsl(0, 0%, 98%);
+  background-color: white;
   position: sticky;
   top: 0;
 }
@@ -298,7 +296,8 @@ a {
 }
 
 .section__hero {
-  background-color: hsl(0, 0%, 98%);
+  background-image: linear-gradient(to bottom, hsl(0, 0%, 98%), white);
+  background-color: transparent;
   margin-block-start: -30vw;
 }
 @media (min-width: 768px) {
@@ -348,7 +347,6 @@ a {
 }
 .section__hero .hero__img img {
   object-fit: contain;
-  border: 1px solid blue;
   max-width: 100%;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
@@ -376,7 +374,6 @@ a {
     flex: 1 0 50%;
     order: 1;
     text-align: start;
-    border: 1px solid;
   }
 }
 .section__hero .hero__content > * {
