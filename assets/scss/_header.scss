@@ -46,14 +46,13 @@
 
             @include m.device-up('md') {
                 display: block;
-                padding-inline: f.space(8);
-                padding-block: f.space(4);
+                padding: f.space(3.5) f.space(8);
                 background-image: linear-gradient(20deg, v.$cyan-400, v.$green-500);
                 border-radius: 50px;
                 border: none;
                 background-color: transparent;
                 color: v.$gray-100;
-                font-weight: v.$font-weight-normal;
+                font-weight: v.$font-weight-large;
                 transition: opacity 300ms ease-in-out;
 
                 &:hover {
@@ -96,7 +95,6 @@
             visibility: visible;
             opacity: 1;
             transform: none;
-            padding: 0;
             width: auto;
             background: none;
             border: none;
@@ -113,10 +111,10 @@
 
                 &:not(:last-child) {
 
-                    margin-inline-end: f.multiply_rem_size_by(1);
+                    margin-inline-end: f.space(4);
 
                     @include m.device-up('lg') {
-                        margin-inline-end: f.multiply_rem_size_by(2);
+                        margin-inline-end: f.space(8);
                     }
                 }
             }
@@ -126,7 +124,7 @@
                 display: block;
                 font-weight: v.$font-weight-normal;
                 color: v.$gray-600;
-                font-size: large;
+                font-size: small;
                 text-decoration: none;
                 text-align: center;
                 padding-block: f.space(6);
@@ -138,7 +136,7 @@
                     background-repeat: no-repeat;
                     background-size: 100% 0px;
                     transition: background-size 300ms ease-in;
-                    padding-block: f.space(12);
+                    padding-block: f.space(10);
                 }
 
                 &:hover,

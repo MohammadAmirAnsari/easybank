@@ -2,7 +2,7 @@
 @use 'sass:list' as list;
 
 @function space($multiplier){
-    @return v.$base_rem_size * $multiplier / 4;
+    @return calc(v.$base_rem_size * $multiplier / 4);
 }
 
 @function multiply_rem_size_by($size) {

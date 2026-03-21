@@ -5,10 +5,11 @@
 .section__hero {
 
     background-color: v.$gray-50;
-    margin-block-start: -22vw;
+    margin-block-start: -30vw;
 
     @include m.device-up('md') {
         margin-block-start: 0;
+        // margin-block-start: -5vw;
         overflow-x: clip;
 
     }
@@ -17,31 +18,41 @@
         display: flex;
         flex-direction: column;
         position: relative;
-
+        
         @include m.device-up('md') {
-            flex-direction: row-reverse;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
         }
-
-        &::before {
-            content: "";
+        
+        &__bg {
+            
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 3%;
-            width: 100vw;
-            height: 100%;
-            background-image: url("./../images/bg-intro-mobile.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center top;
+            inset: 0;
+            overflow-y: clip;
+            z-index: 0;
 
-            @include m.device-up('md') {
-                width: 100%;
-                background-image: url("./../images/bg-intro-desktop.svg");
-                background-size: auto 100%;
-                transform: translate(-5%,-22%) scale(1.3);
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 4%;
+                width: 100vw;
+                height: 100%;
+                background-image: url("./../images/bg-intro-mobile.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center top;
+
+                @include m.device-up('md') {
+                    width: 100%;
+                    background-image: url("./../images/bg-intro-desktop.svg");
+                    background-size: auto 100%;
+                    transform: translate(3%, -14%) scale(1.6);
+                    // transform: translate(0) scale(1.3);
+                }
             }
         }
 
@@ -49,12 +60,18 @@
 
             img {
                 object-fit: contain;
+                border: 1px solid blue;
                 max-width: 100%;
                 filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 
                 @include m.device-up('md') {
-                    transform: translate(37%, -4%) scale(1.4);
+                    flex: 1 0 50%;
+                    transform: translate(40%,-4%) scale(1.4);
                 }
+            }
+
+            @include m.device-up('md') {
+                order: 2;
             }
         }
 
@@ -65,7 +82,12 @@
             padding-inline: f.space(2);
 
             @include m.device-up('md') {
+                padding-inline: 0;
+                margin: 0;
+                flex: 1 0 50%;
+                order: 1;
                 text-align: start;
+                border: 1px solid;
             }
 
             >* {
@@ -76,34 +98,40 @@
                 font-weight: v.$font-weight-normal;
                 font-size: f.multiply_rem_size_by(2);
                 color: v.$blue-950;
+
+                @include m.device-up('md') {
+                    font-size: f.multiply_rem_size_by(3.5);
+                }
+
             }
 
             p {
                 color: v.$gray-600;
                 font-size: f.multiply_rem_size_by(0.7);
                 font-weight: v.$font-weight-large;
+
+                @include m.device-up('md') {
+                    font-size: f.multiply_rem_size_by(1);
+                    font-weight: v.$font-weight-normal;
+                    max-width: 80%;
+                }
             }
 
             button {
                 display: block;
-                padding-inline: f.space(8);
-                padding-block: f.space(4);
+                padding: f.space(3.5) f.space(8);
                 background-image: linear-gradient(20deg, v.$cyan-400, v.$green-500);
                 border-radius: 50px;
                 border: none;
                 background-color: transparent;
                 color: v.$gray-100;
-                font-weight: v.$font-weight-normal;
+                font-weight: v.$font-weight-large;
                 transition: opacity 300ms ease-in-out;
                 margin: auto;
 
                 &:hover {
                     cursor: pointer;
                     opacity: 0.7;
-                }
-
-                @include m.device-up('md') {
-                    margin: 0;
                 }
             }
         }
