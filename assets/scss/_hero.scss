@@ -111,7 +111,7 @@
                 font-weight: v.$font-weight-large;
 
                 @include m.device-up('md') {
-                    font-size: f.multiply_rem_size_by(1);
+                    font-size: f.multiply_rem_size_by(1.1);
                     font-weight: v.$font-weight-normal;
                     max-width: 80%;
                 }
@@ -127,7 +127,6 @@
                 color: v.$gray-100;
                 font-weight: v.$font-weight-large;
                 transition: opacity 300ms ease-in-out;
-                margin: auto;
 
                 &:hover {
                     cursor: pointer;
