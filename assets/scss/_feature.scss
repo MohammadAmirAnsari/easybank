@@ -1,0 +1,89 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'functions' as f;
+
+.section__feature {
+
+    padding-block: f.space(16);
+    background-color: v.$gray-100;
+    padding-inline: f.space(1);
+
+    .feature {
+
+        &__title {
+            font-size: f.multiply_rem_size_by(2);
+            font-weight: v.$font-weight-small;
+            margin-block-end: f.space(4.5);
+
+            @include m.device-up('md') {
+                font-size: f.multiply_rem_size_by(3);
+            }
+        }
+
+        &__description {
+            font-size: f.multiply_rem_size_by(0.7);
+            font-weight: v.$font-weight-large;
+            margin-block-end: f.space(3);
+            color: v.$gray-600;
+
+            @include m.device-up('md') {
+                font-size: f.multiply_rem_size_by(1.1);
+                font-weight: v.$font-weight-normal;
+                max-width: 60%;
+                margin-block-end: f.space(6);
+            }
+        }
+
+
+        .feature__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+
+            @include m.device-up('md') {
+                flex-direction: row;
+                gap: f.space(13);
+            }
+
+            .card {
+
+                margin-block-start: f.space(9);
+
+                &__image {
+                    margin-block-end: f.space(10);
+
+                    @include m.device-up('md') {
+                        margin-block-end: f.space(8);
+
+                    }
+                }
+
+                &__title {
+                    font-size: f.multiply_rem_size_by(1.4);
+                    font-weight: v.$font-weight-small;
+                    margin-block-end: f.space(6);
+
+                    @include m.device-up('md') {
+                        font-size: f.multiply_rem_size_by(1.6);
+                        min-height: 4rem;
+                        margin-block-end: f.space(2);
+                    }
+                }
+
+                &__description {
+                    font-size: f.multiply_rem_size_by(0.7);
+                    font-weight: v.$font-weight-large;
+                    color: v.$gray-600;
+
+                    @include m.device-up('md') {
+                        font-size: f.multiply_rem_size_by(0.89);
+                        line-height: 1.7;
+                        font-weight: v.$font-weight-normal;
+                        margin-block-end: f.space(6);
+                    }
+                }
+            }
+        }
+    }
+}

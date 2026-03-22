@@ -126,7 +126,6 @@
                 color: v.$gray-600;
                 font-size: small;
                 text-decoration: none;
-                text-align: center;
                 padding-block: f.space(6);
                 
                 @include m.device-up('md') {
@@ -177,7 +176,7 @@
             }
 
             &:not(:last-child) {
-                margin-bottom: 3px;
+                margin-block-end: 3px;
             }
         }
 

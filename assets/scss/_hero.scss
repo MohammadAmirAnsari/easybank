@@ -77,7 +77,6 @@
         }
 
         &__content {
-            text-align: center;
             margin-block-start: f.space(2);
             margin-block-end: f.space(10);
             padding-inline: f.space(2);
@@ -91,7 +90,7 @@
             }
 
             >* {
-                margin-bottom: f.space(6);
+                margin-block-end: f.space(6);
             }
 
             h1 {
@@ -127,10 +126,15 @@
                 color: v.$gray-100;
                 font-weight: v.$font-weight-large;
                 transition: opacity 300ms ease-in-out;
-
+                margin: auto;
+                
                 &:hover {
                     cursor: pointer;
                     opacity: 0.7;
+                }
+                
+                @include m.device-up('md'){
+                    margin: 0;
                 }
             }
         }
