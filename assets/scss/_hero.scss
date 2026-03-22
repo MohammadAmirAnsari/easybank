@@ -5,15 +5,12 @@
 .section__hero {
 
     background-image: linear-gradient(to bottom, v.$gray-50, white);
-
     background-color: transparent;
     margin-block-start: -30vw;
 
     @include m.device-up('md') {
         margin-block-start: 0;
-        // margin-block-start: -5vw;
         overflow-x: clip;
-
     }
 
     .hero {
@@ -83,7 +80,7 @@
 
             @include m.device-up('md') {
                 padding-inline: 0;
-                margin: 0;
+                margin-block-end: f.space(10);
                 flex: 1 0 50%;
                 order: 1;
                 text-align: start;
@@ -127,13 +124,13 @@
                 font-weight: v.$font-weight-large;
                 transition: opacity 300ms ease-in-out;
                 margin: auto;
-                
+
                 &:hover {
                     cursor: pointer;
                     opacity: 0.7;
                 }
-                
-                @include m.device-up('md'){
+
+                @include m.device-up('md') {
                     margin: 0;
                 }
             }
