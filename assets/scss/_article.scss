@@ -1,0 +1,86 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'functions' as f;
+
+.section__article {
+
+    background-image: linear-gradient(to bottom, white, v.$gray-50);
+    background-color: transparent;
+    padding-inline: f.space(1);
+    padding-block: f.space(10);
+
+    .article {
+
+        &__title {
+            font-size: f.multiply_rem_size_by(2);
+            font-weight: v.$font-weight-small;
+            margin-block-end: f.space(12);
+
+            @include m.device-up('md') {
+                font-size: f.multiply_rem_size_by(3);
+            }
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            flex-wrap: wrap;
+
+            .card {
+                background-color: white;
+                border-radius: 5px;
+                padding-block-end: f.space(5);
+                overflow: hidden;
+                margin-block-end: f.space(4);
+                text-align: start;
+                flex: 0 0 100%;
+
+                @include m.device-up('lg') {
+                    margin-block-end: f.space(8);
+                    flex: 0 0 calc(50% - f.space(3));
+                }
+
+                @include m.device-up('xl') {
+                    flex: 0 0 calc(25% - f.space(5));
+                }
+
+                >:not(img) {
+                    padding-inline: f.space(4);
+                }
+
+                img {
+                    width: 100%;
+                    aspect-ratio: 4 / 3;
+                    object-fit: cover;
+                }
+
+                &__author {
+                    font-size: f.multiply_rem_size_by(0.5);
+                    margin-block: f.space(4);
+                    color: v.$gray-600;
+                }
+
+                &__title {
+                    font-size: f.multiply_rem_size_by(0.85);
+                    font-weight: v.$font-weight-small;
+                    margin-block-end: f.space(2);
+
+                    @include m.device-up('md') {
+                        font-size: f.multiply_rem_size_by(1);
+                    }
+                }
+
+                &__description {
+                    font-size: f.multiply_rem_size_by(0.7);
+                    font-weight: v.$font-weight-normal;
+                    color: v.$gray-600;
+
+                    @include m.device-up('md') {
+                        font-size: f.multiply_rem_size_by(0.9);
+                    }
+                }
+            }
+        }
+    }
+}

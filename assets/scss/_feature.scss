@@ -4,9 +4,9 @@
 
 .section__feature {
 
-    padding-block: f.space(16);
     background-color: v.$gray-100;
     padding-inline: f.space(1);
+    padding-block: f.space(16);
 
     .feature {
 
@@ -35,17 +35,17 @@
         }
 
 
-        .feature__content {
+        &__content {
             display: grid;
-            
+            padding-inline: f.space(1);
+
             @include m.device-up('lg') {
                 grid-template-columns: repeat(2, 1fr);
-                gap: f.space(13);
+                gap: f.space(7);
             }
 
             @include m.device-up('xl') {
                 grid-template-columns: repeat(4, 1fr);
-                gap: f.space(13);
             }
 
             .card {
@@ -78,7 +78,7 @@
                     color: v.$gray-600;
 
                     @include m.device-up('md') {
-                        font-size: f.multiply_rem_size_by(0.89);
+                        font-size: f.multiply_rem_size_by(0.97);
                         line-height: 1.7;
                         font-weight: v.$font-weight-normal;
                         margin-block-end: f.space(6);

@@ -34,7 +34,8 @@ h4,
 h5,
 h6,
 ul,
-p {
+p,
+figure {
     margin: 0;
     padding: 0;
     padding-block: 0;
@@ -49,7 +50,7 @@ p {
     padding-inline: f.space(6);
     text-align: center;
 
-    @include m.device-up('md'){
+    @include m.device-up('md') {
         text-align: start;
     }
 }
@@ -62,10 +63,6 @@ p {
 
 .no-scroll {
     overflow: hidden;
-}
-
-h1 {
-    margin: 0;
 }
 
 a {
