@@ -77,6 +77,7 @@
             margin-block-start: f.space(2);
             margin-block-end: f.space(10);
             padding-inline: f.space(2);
+            z-index: 2;
 
             @include m.device-up('md') {
                 padding-inline: 0;

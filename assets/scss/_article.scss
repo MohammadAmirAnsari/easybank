@@ -60,14 +60,19 @@
                     margin-block: f.space(4);
                     color: v.$gray-600;
                 }
-
+                
                 &__title {
                     font-size: f.multiply_rem_size_by(0.85);
                     font-weight: v.$font-weight-small;
                     margin-block-end: f.space(2);
-
+                    
                     @include m.device-up('md') {
                         font-size: f.multiply_rem_size_by(1);
+                    }
+                    
+                    &:hover{                        
+                        cursor: pointer;
+                        color: color-mix(in srgb, v.$green-500 50%, v.$cyan-400 50%);
                     }
                 }
 
