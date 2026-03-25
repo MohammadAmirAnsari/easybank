@@ -6,10 +6,13 @@
 
 .footer {
     background-color: v.$blue-950;
+    padding-block: f.space(7);
+
+    @include m.device-up('md') {
+        padding-block: inherit;
+    }
 
     &__nav {
-
-
         padding-block: f.space(6);
         display: flex;
         flex-direction: column;
@@ -24,17 +27,13 @@
         }
     }
 
-    &__logo {
-        img {
-            margin-block-end: f.space(5);
-
-            @include m.device-up('md') {
-                margin-block-end: f.space(10);
-            }
-        }
-    }
-
     &__links {
+
+        margin-block-start: f.space(6);
+
+        @include m.device-up('md') {
+            margin-block-start: f.space(10);
+        }
 
         >a {
             margin-inline: 5px;
@@ -42,20 +41,17 @@
     }
 
     &__menu {
-
-        padding-block: f.space(6);
-        border-radius: 5px;
+        margin-block: f.space(6);
 
         @include m.device-up('md') {
+            margin-block: 0;
+            margin-inline-end: f.space(55);
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            // grid-template-rows: repeat(3,auto);
+            grid-template-rows: repeat(3, auto);
             grid-auto-flow: column;
-            padding: 0;
-            transform: none;
-            width: auto;
-            background: none;
-            border: none;
+            column-gap: f.space(30);
+            text-align: start;
         }
 
         li {
@@ -111,36 +107,26 @@
             background-color: transparent;
             color: v.$gray-100;
             font-weight: v.$font-weight-large;
-            margin: auto;
+            margin-inline: auto;
+
+            @include m.device-up('md') {
+                margin-inline-end: 0;
+            }
 
             &:hover {
                 cursor: pointer;
-                opacity: 0.9;
-
-                button {
-                    display: block;
-                    padding: f.space(3.5) f.space(8);
-                    background-image: linear-gradient(20deg, v.$cyan-400, v.$green-500);
-                    border-radius: 50px;
-                    border: none;
-                    background-color: transparent;
-                    color: v.$gray-100;
-                    font-weight: v.$font-weight-large;
-                    margin: auto;
-
-                    &:hover {
-                        cursor: pointer;
-                        opacity: 0.9;
-                        background-image: linear-gradient(20deg, lighten(v.$cyan-400, 10%), lighten(v.$green-500, 10%));
-                    }
-                }
+                background-image: linear-gradient(20deg, lighten(v.$cyan-400, 20%), lighten(v.$green-500, 20%));
             }
         }
 
         p {
             color: v.$gray-600;
+            font-size: f.multiply_rem_size_by(0.8);
+            margin-block-start: f.space(6);
 
-            margin-block-start: f.space(4);
+            @include m.device-up('md') {
+                margin-inline-start: auto;
+            }
         }
     }
 }

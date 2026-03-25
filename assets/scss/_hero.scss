@@ -123,12 +123,11 @@
                 background-color: transparent;
                 color: v.$gray-100;
                 font-weight: v.$font-weight-large;
-                transition: opacity 300ms ease-in-out;
                 margin: auto;
 
                 &:hover {
                     cursor: pointer;
-                    opacity: 0.7;
+                    background-image: linear-gradient(20deg, lighten(v.$cyan-400, 20%), lighten(v.$green-500, 20%));
                 }
 
                 @include m.device-up('md') {
