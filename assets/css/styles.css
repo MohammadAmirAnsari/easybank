@@ -133,7 +133,7 @@ a {
 }
 .header__overlay {
   position: fixed;
-  inset: 4.5rem 0 0 0;
+  inset: 4.4rem 0 0 0;
   opacity: 0;
   visibility: hidden;
   background-image: linear-gradient(to bottom, hsl(233, 26%, 24%) 0%, hsl(233, 8%, 62%) 50%);
